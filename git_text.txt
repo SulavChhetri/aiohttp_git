@@ -1,15 +1,39 @@
-git add .
-git commit -a
+git add -A
+git commit -> opens a vim terminal, press i to enter long messages about the commit and then press Esc then :wq enter to exit
 git commit -m "Generally used for short messgae"
 
 
-For branch
+git checkout app.py -> if you want to restore the content of your last commit
+git checkout -f -> all files restored to their last commit
 
+
+git diff -> compares the difference between files of working tree to the stage area
+git diff --stage -> compares the difference between files of stage area to the commit tree
+
+git commit -a -m "Message" -> skips the stage area and directly commits the file
+
+For branch
 "To create a branch" -> git branch experimental
 "Now we can check the total branches in the git by "-> git branch
 "Switch from the branch main to branch experimental by " -> git switch experimental
 "After switching back to main, we can merge the changes of the experimental branch to the main branch by " -> git merge experimental
 "After commiting the changes to the git, we can delete the branch experimental by " -> git branch -d experimental
 
-When git commit crash due to the existence of similar file
-rm -Force .git/index.lock
+Removing the file in git:
+git rm -Force .git/index.lock-> removes the index.lock file which is present in the hidden .git folder
+git rm app.py -> completely deletes the file app.py from both working tree as well as stage area
+git rm --cached app.py -> only deletes the file from the staged area, the file app.py becomes untracked 
+
+Reviewing history of commits
+git log -p -2 -> shows the diff of last two commits
+
+
+Adding remote repository:
+git remote add origin https://github........git-> the url can be reffered by the name origin
+git remote -v -> shows the fetch and push url
+git push -u origin main -> this command pushes the main branch of the local tree into the remote repository
+
+To push multiple branches into the remote repository
+git checkout experimental
+git push -u orgin experimental
+The use of -u make sure that next time we can push the experimental branch in this example with simple command -> git push
