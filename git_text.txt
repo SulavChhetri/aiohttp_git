@@ -1,0 +1,13 @@
+git add .
+git commit -a
+git commit -m "Generally used for short messgae"
+
+
+For branch
+
+"To create a branch" -> git branch experimental
+"Now we can check the total branches in the git by "-> git branch
+"Switch from the branch main to branch experimental by " -> git switch experimental
+
+When git commit crash due to the existence of similar file
+rm -Force .git/index.lock
