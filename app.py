@@ -17,10 +17,11 @@ async def main(urls: list= []):
         done, _pending =await asyncio.wait(task_list)
         for item in done:
             if item.exception() is None:
-                data = await (await item).text()
+                data = await (item.result()).text()
                 final_result.append(data)
             else:
                 error_urls.append(item.url)
+    
     return len(final_result),error_urls
 
 if __name__ == "__main__":

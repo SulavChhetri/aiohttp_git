@@ -8,6 +8,8 @@ For branch
 "To create a branch" -> git branch experimental
 "Now we can check the total branches in the git by "-> git branch
 "Switch from the branch main to branch experimental by " -> git switch experimental
+"After switching back to main, we can merge the changes of the experimental branch to the main branch by " -> git merge experimental
+"After commiting the changes to the git, we can delete the branch experimental by " -> git branch -d experimental
 
 When git commit crash due to the existence of similar file
 rm -Force .git/index.lock
